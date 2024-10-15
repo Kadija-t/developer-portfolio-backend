@@ -1,18 +1,18 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Struct, Schema } from '@strapi/strapi';
 
-export interface TagTag extends Schema.Component {
+export interface TagTag extends Struct.ComponentSchema {
   collectionName: 'components_tag_tags';
   info: {
     displayName: 'Tag';
   };
   attributes: {
-    title: Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
       'tag.tag': TagTag;
     }
   }
