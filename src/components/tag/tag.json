@@ -1,12 +1,9 @@
 {
   "collectionName": "components_tag_tags",
   "info": {
-    "displayName": "Tag"
+    "displayName": "Tag",
+    "description": ""
   },
   "options": {},
-  "attributes": {
-    "title": {
-      "type": "string"
-    }
-  }
+  "attributes": {}
 }

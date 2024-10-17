@@ -4,10 +4,9 @@ export interface TagTag extends Schema.Component {
   collectionName: 'components_tag_tags';
   info: {
     displayName: 'Tag';
+    description: '';
   };
-  attributes: {
-    title: Attribute.String;
-  };
+  attributes: {};
 }
 
 declare module '@strapi/types' {

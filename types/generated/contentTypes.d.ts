@@ -858,7 +858,11 @@ export interface ApiProjectProject extends Schema.CollectionType {
     Description: Attribute.Text;
     Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     Email: Attribute.Email;
-    tag: Attribute.Component<'tag.tag', true>;
+    Name: Attribute.Relation<
+      'api::project.project',
+      'oneToMany',
+      'api::tag.tag'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -908,6 +912,28 @@ export interface ApiSkillSkill extends Schema.CollectionType {
   };
 }
 
+export interface ApiTagTag extends Schema.CollectionType {
+  collectionName: 'tags';
+  info: {
+    singularName: 'tag';
+    pluralName: 'tags';
+    displayName: 'Tag';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -930,6 +956,7 @@ declare module '@strapi/types' {
       'api::home.home': ApiHomeHome;
       'api::project.project': ApiProjectProject;
       'api::skill.skill': ApiSkillSkill;
+      'api::tag.tag': ApiTagTag;
     }
   }
 }
