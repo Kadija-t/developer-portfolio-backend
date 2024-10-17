@@ -863,6 +863,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'oneToMany',
       'api::tag.tag'
     >;
+    Url: Attribute.String & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
