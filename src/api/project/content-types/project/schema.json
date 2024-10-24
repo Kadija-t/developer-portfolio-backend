@@ -46,6 +46,9 @@
     },
     "Problematic": {
       "type": "string"
+    },
+    "Solution": {
+      "type": "string"
     }
   }
 }

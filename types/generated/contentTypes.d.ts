@@ -866,6 +866,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     Url: Attribute.String & Attribute.Unique;
     Infos: Attribute.String;
     Problematic: Attribute.String;
+    Solution: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
