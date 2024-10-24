@@ -864,6 +864,8 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'api::tag.tag'
     >;
     Url: Attribute.String & Attribute.Unique;
+    Infos: Attribute.String;
+    Problematic: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

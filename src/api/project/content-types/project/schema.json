@@ -40,6 +40,12 @@
     "Url": {
       "type": "string",
       "unique": true
+    },
+    "Infos": {
+      "type": "string"
+    },
+    "Problematic": {
+      "type": "string"
     }
   }
 }
